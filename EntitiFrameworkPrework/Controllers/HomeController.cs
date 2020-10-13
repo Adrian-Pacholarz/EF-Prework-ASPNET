@@ -23,8 +23,9 @@ namespace EntitiFrameworkPrework.Controllers
         public IActionResult Index()
         {
             var allTeams = _unitOfWork.Teams.GetAll();
+            var allMatches = _unitOfWork.Matches.GetAll();
 
-            return View(allTeams);
+            return View(new TeamMatchViewModel {teams = allTeams, matches = allMatches });
         }
 
         public IActionResult Privacy()

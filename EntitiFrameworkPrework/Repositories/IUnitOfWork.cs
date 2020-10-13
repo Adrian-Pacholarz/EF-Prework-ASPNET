@@ -9,5 +9,6 @@ namespace EntitiFrameworkPrework.Repositories
     public interface IUnitOfWork : IDisposable
     {
         ITeamRepository Teams { get; }
+        IMatchRepository Matches { get; }
     }
 }

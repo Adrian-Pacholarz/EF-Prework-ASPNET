@@ -28,7 +28,7 @@ namespace EntitiFrameworkPrework
         {
             services.AddControllersWithViews();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddDbContext<MyAppContext>(options => options.UseSqlServer("Data Source=LAPTOP-326KG9K9\\SQLEXPRESS;Integrated Security=True;Initial Catalog=EntitiFrameworkPrework;"));
+            services.AddDbContext<MyAppContext>(options => options.UseSqlServer("Data Source=LAPTOP-326KG9K9\\SQLEXPRESS;Integrated Security=True;Initial Catalog=TeamsMatches;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

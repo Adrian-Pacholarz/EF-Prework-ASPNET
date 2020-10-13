@@ -17,5 +17,6 @@ namespace EntitiFrameworkPrework.ORM
 
         public DbSet<Match> Matches { get; set; }
         public DbSet<Team> Teams { get; set; }
+
     }
 }

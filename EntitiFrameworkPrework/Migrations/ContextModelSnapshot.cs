@@ -26,7 +26,7 @@ namespace EntitiFrameworkPrework.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("away_teamid")
+                    b.Property<int?>("away_team_id")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("date")
@@ -38,14 +38,14 @@ namespace EntitiFrameworkPrework.Migrations
                     b.Property<int>("goals_home")
                         .HasColumnType("int");
 
-                    b.Property<int?>("home_teamid")
+                    b.Property<int?>("home_team_id")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("away_teamid");
+                    b.HasIndex("away_team_id");
 
-                    b.HasIndex("home_teamid");
+                    b.HasIndex("home_team_id");
 
                     b.ToTable("Matches");
                 });
@@ -75,11 +75,11 @@ namespace EntitiFrameworkPrework.Migrations
                 {
                     b.HasOne("EntitiFrameworkPrework.Models.Team", "away_team")
                         .WithMany()
-                        .HasForeignKey("away_teamid");
+                        .HasForeignKey("away_team_id");
 
                     b.HasOne("EntitiFrameworkPrework.Models.Team", "home_team")
                         .WithMany()
-                        .HasForeignKey("home_teamid");
+                        .HasForeignKey("home_team_id");
                 });
 #pragma warning restore 612, 618
         }

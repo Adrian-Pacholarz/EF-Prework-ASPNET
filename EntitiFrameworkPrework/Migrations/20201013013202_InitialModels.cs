@@ -29,8 +29,8 @@ namespace EntitiFrameworkPrework.Migrations
                     id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     date = table.Column<DateTime>(nullable: false),
-                    home_teamid = table.Column<int>(nullable: true),
-                    away_teamid = table.Column<int>(nullable: true),
+                    home_team_id = table.Column<int>(nullable: true),
+                    away_team_id = table.Column<int>(nullable: true),
                     goals_home = table.Column<int>(nullable: false),
                     goals_away = table.Column<int>(nullable: false)
                 },
@@ -39,13 +39,13 @@ namespace EntitiFrameworkPrework.Migrations
                     table.PrimaryKey("PK_Matches", x => x.id);
                     table.ForeignKey(
                         name: "FK_Matches_Teams_away_team_id",
-                        column: x => x.away_teamid,
+                        column: x => x.away_team_id,
                         principalTable: "Teams",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Matches_Teams_home_team_id",
-                        column: x => x.home_teamid,
+                        column: x => x.home_team_id,
                         principalTable: "Teams",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -54,16 +54,20 @@ namespace EntitiFrameworkPrework.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Matches_away_team_id",
                 table: "Matches",
-                column: "away_teamid");
+                column: "away_team_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Matches_home_team_id",
                 table: "Matches",
-                column: "home_teamid");
+                column: "home_team_id");
 
             migrationBuilder.Sql("INSERT into Teams VALUES ('The Pipis', 'Spain', 'Madrid')");
             migrationBuilder.Sql("INSERT into Teams VALUES ('FC Codecool', 'Hungary', 'Budapest')");
             migrationBuilder.Sql("INSERT into Teams VALUES ('Black Wolves', 'France', 'Paris')");
+
+            migrationBuilder.Sql("INSERT into Matches VALUES ('20120618 10:34:09 AM', 1, 2, 7, 5)");
+            migrationBuilder.Sql("INSERT into Matches VALUES ('20160928 11:47:18 AM', 3, 1, 2, 6)");
+            migrationBuilder.Sql("INSERT into Matches VALUES ('20180307 08:10:01 AM', 2, 3, 3, 4)");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

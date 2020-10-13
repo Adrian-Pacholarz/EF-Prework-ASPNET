@@ -1,15 +1,23 @@
-﻿@model IEnumerable<Team>
+﻿@model TeamMatchViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h2 class="display-4">TEAMS</h2>
     <ul>
-        @foreach (var team in Model)
+        @foreach (var team in Model.teams)
         {
-            <li>@team.name</li>
-            <li>From: @team.country, @team.city</li>
+        <li>@team.name From: @team.country, @team.city</li>
+
+        }
+    </ul>
+    <h2 class="display-4">MATCHES</h2>
+    <ul>
+        @foreach (var match in Model.matches)
+        {
+            <li>@match.away_team.name vs @match.home_team.name</li>
+            <li>@match.goals_away : @match.goals_home</li>
         }
     </ul>
 

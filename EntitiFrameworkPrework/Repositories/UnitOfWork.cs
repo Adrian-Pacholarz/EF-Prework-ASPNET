@@ -11,10 +11,13 @@ namespace EntitiFrameworkPrework.Repositories
         private readonly MyAppContext _context;
         public ITeamRepository Teams { get; }
 
+        public IMatchRepository Matches { get; }
+
         public UnitOfWork(MyAppContext context)
         {
             this._context = context;
             Teams = new TeamRepository(_context);
+            Matches = new MatchRepository(_context);
         }
 
         public void Dispose()

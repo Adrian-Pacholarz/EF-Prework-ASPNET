@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntitiFrameworkPrework.Repositories
 {
-    public interface ITeamRepository : IRepository<Team>
+    public interface IMatchRepository : IRepository<Match>
     {
-        IEnumerable<Team> GetTeamsContainingFC();
-
     }
 }
