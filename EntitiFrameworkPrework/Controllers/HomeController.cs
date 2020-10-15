@@ -28,10 +28,35 @@ namespace EntitiFrameworkPrework.Controllers
             return View(new TeamMatchViewModel {teams = allTeams, matches = allMatches });
         }
 
+        public IActionResult BestTeam()
+        {
+            return RedirectToAction("Index");
+        }
+
         public IActionResult FCTeams()
         {
             var FCTeams = _unitOfWork.Teams.GetTeamsContainingFC();
             return View(FCTeams);
+        }
+
+        public IActionResult TeamsGoals()
+        {
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult TeamsMoreThanMatch()
+        {
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult MostGoals()
+        {
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult MatchesLastWeek()
+        {
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
