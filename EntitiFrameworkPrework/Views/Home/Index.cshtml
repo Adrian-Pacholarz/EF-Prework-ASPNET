@@ -4,22 +4,47 @@
 }
 
 <div class="text-center">
-    <h2 class="display-4">TEAMS</h2>
-    <ul>
-        @foreach (var team in Model.teams)
-        {
-        <li>@team.name From: @team.country, @team.city</li>
+<h2 class="display-4">TEAMS</h2>
+<table>
+    <tr>
+        <th><strong>Id</strong></th>
+        <th><strong>Country</strong></th>
+        <th><strong>City</strong></th>
+    </tr>
+    @foreach (var team in Model.teams)
+    {
+    <tr>
+        <th>@team.name</th>
+        <th>@team.country</th>
+        <th>@team.city</th>
+    </tr>
 
-        }
-    </ul>
-    <h2 class="display-4">MATCHES</h2>
-    <ul>
-        @foreach (var match in Model.matches)
-        {
-            <li>@match.away_team.name vs @match.home_team.name</li>
-            <li>@match.goals_away : @match.goals_home</li>
-        }
-    </ul>
+    }
+</table>
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2 class="display-4">MATCHES</h2>
+<table>
+    <tr>
+        <th><strong>Date</strong></th>
+        <th><strong>Home Team</strong></th>
+        <th><strong>Home Score</strong></th>
+        <th><strong>Away Score</strong></th>
+        <th><strong>Away Team</strong></th>
+
+    </tr>
+    @foreach (var match in Model.matches)
+    {
+    <tr>
+        <th>@match.date</th>
+        <th>@match.home_team.name</th>
+        <th>@match.goals_home</th>
+        <th>@match.goals_away</th>
+        <th>@match.away_team.name</th>
+    </tr>
+
+    }
+</table>        
+    
+
+<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
