@@ -21,7 +21,7 @@ namespace EntitiFrameworkPrework.Repositories
         }
         public IEnumerable<Team> GetTeamsContainingFC()
         {
-            return myAppContext.Teams.ToList();
+            return myAppContext.Teams.Where(t => t.name.Contains("FC")).ToList();
         }
 
     }

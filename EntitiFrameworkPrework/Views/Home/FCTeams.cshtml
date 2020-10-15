@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "FC Teams";
+}
+
+<div class="text-center">
+    <h2 class="display-4">TEAMS</h2>
+    <table>
+        <tr>
+            <th><strong>Id</strong></th>
+            <th><strong>Country</strong></th>
+            <th><strong>City</strong></th>
+        </tr>
+        @foreach (var team in Model)
+        {
+            <tr>
+                <th>@team.name</th>
+                <th>@team.country</th>
+                <th>@team.city</th>
+            </tr>
+
+        }
+    </table>
+</div>

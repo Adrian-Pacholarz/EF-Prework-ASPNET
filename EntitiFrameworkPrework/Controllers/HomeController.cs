@@ -28,9 +28,10 @@ namespace EntitiFrameworkPrework.Controllers
             return View(new TeamMatchViewModel {teams = allTeams, matches = allMatches });
         }
 
-        public IActionResult Privacy()
+        public IActionResult FCTeams()
         {
-            return View();
+            var FCTeams = _unitOfWork.Teams.GetTeamsContainingFC();
+            return View(FCTeams);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
