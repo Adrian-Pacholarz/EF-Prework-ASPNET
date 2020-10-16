@@ -1,5 +1,6 @@
 ﻿using EntitiFrameworkPrework.Models;
 using EntitiFrameworkPrework.ORM;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,14 @@ namespace EntitiFrameworkPrework.Repositories
             })
              .OrderByDescending(m => m.goals_sum)
              .First();
+        }
+
+        public IEnumerable<Match> GetMatchesFromLastWeek()
+        {
+            return myAppContext.Matches.Where(m => m.date >= DateTime.Now.AddDays(-7))
+                .Include(m => m.home_team)
+                .Include(m => m.away_team)
+                .ToList();
         }
     }
 }

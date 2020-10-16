@@ -58,7 +58,8 @@ namespace EntitiFrameworkPrework.Controllers
 
         public IActionResult MatchesLastWeek()
         {
-            return RedirectToAction("Index");
+            var MatchesLastWeek = _unitOfWork.Matches.GetMatchesFromLastWeek();
+            return View(MatchesLastWeek);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
