@@ -3,26 +3,28 @@
     ViewData["Title"] = "Match with most goals";
 }
 
-<h2 class="display-4">MOST INTENSIVE MATCH</h2>
-<table>
-    <tr>
-        <th><strong>Date</strong></th>
-        <th><strong>All Goals</strong></th>
-        <th><strong>Home Team</strong></th>
-        <th><strong>Home Score</strong></th>
-        <th><strong>Away Score</strong></th>
-        <th><strong>Away Team</strong></th>
+<div class="text-center">
+    <h2 class="display-4">MOST INTENSIVE MATCH</h2>
+    <table>
+        <tr>
+            <th><strong>Date</strong></th>
+            <th><strong>All Goals</strong></th>
+            <th><strong>Home Team</strong></th>
+            <th><strong>Home Score</strong></th>
+            <th><strong>Away Score</strong></th>
+            <th><strong>Away Team</strong></th>
 
-    </tr>
+        </tr>
 
-    <tr>
-        <th>@Model.date</th>
-        <th>@Model.goals_sum</th>
-        <th>@Model.home_name</th>
-        <th>@Model.goals_home</th>
-        <th>@Model.goals_away</th>
-        <th>@Model.away_name</th>
-        
-    </tr>
+        <tr>
+            <th>@Model.date</th>
+            <th>@Model.goals_sum</th>
+            <th>@Model.home_name</th>
+            <th>@Model.goals_home</th>
+            <th>@Model.goals_away</th>
+            <th>@Model.away_name</th>
 
-</table>        
+        </tr>
+
+    </table>
+</div>

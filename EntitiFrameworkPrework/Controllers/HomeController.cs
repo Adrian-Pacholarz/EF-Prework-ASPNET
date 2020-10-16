@@ -47,7 +47,8 @@ namespace EntitiFrameworkPrework.Controllers
 
         public IActionResult TeamsMoreThanMatch()
         {
-            return RedirectToAction("Index");
+            var TeamsPlayedMore = _unitOfWork.Teams.GetTeamsPlayedMoreMatches();
+            return View(TeamsPlayedMore);
         }
 
         public IActionResult MostGoals()
