@@ -8,5 +8,6 @@ namespace EntitiFrameworkPrework.Repositories
 {
     public interface IMatchRepository : IRepository<Match>
     {
+        MatchViewModel GetMostGoalsMatch();
     }
 }

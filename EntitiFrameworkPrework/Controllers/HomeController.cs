@@ -52,7 +52,8 @@ namespace EntitiFrameworkPrework.Controllers
 
         public IActionResult MostGoals()
         {
-            return RedirectToAction("Index");
+            var MostGoals = _unitOfWork.Matches.GetMostGoalsMatch();
+            return View(MostGoals);
         }
 
         public IActionResult MatchesLastWeek()
