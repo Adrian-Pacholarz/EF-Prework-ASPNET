@@ -30,7 +30,8 @@ namespace EntitiFrameworkPrework.Controllers
 
         public IActionResult BestTeam()
         {
-            return RedirectToAction("Index");
+            var bestTeam = _unitOfWork.Teams.GetBestTeam();
+            return View(bestTeam);
         }
 
         public IActionResult FCTeams()

@@ -13,5 +13,7 @@ namespace EntitiFrameworkPrework.Repositories
         IEnumerable<TeamGoalsViewModel> GetTeamsWithGoals();
 
         IEnumerable<TeamGoalsViewModel> GetTeamsPlayedMoreMatches();
+
+        Team GetBestTeam();
     }
 }

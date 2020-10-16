@@ -126,5 +126,24 @@ namespace EntitiFrameworkPrework.Repositories
                 (key, g) => new TeamGoalsViewModel { name = key, times_played = g.Count() })
                 .ToList();
         }
+
+        public Team GetBestTeam()
+        {
+            var allTeams = GetTeamsWithGoals();
+            var allGoals = 0;
+            var bestTeam = "";
+
+            foreach (var team in allTeams)
+            {
+                if (team.all_goals > allGoals)
+                {
+                    allGoals = team.all_goals;
+                    bestTeam = team.name;
+                    
+                }
+            }
+
+            return myAppContext.Teams.First(t => t.name.Equals(bestTeam));
+        }
     }
 }

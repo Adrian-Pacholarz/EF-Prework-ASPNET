@@ -2,25 +2,27 @@
 @{
     ViewData["Title"] = "Matches from last week";
 }
-<h2 class="display-4">MATCHES</h2>
-<table>
-    <tr>
-        <th><strong>Date</strong></th>
-        <th><strong>Home Team</strong></th>
-        <th><strong>Home Score</strong></th>
-        <th><strong>Away Score</strong></th>
-        <th><strong>Away Team</strong></th>
-
-    </tr>
-    @foreach (var match in Model)
-    {
+<div class="text-center">
+    <h2 class="display-4">MATCHES</h2>
+    <table>
         <tr>
-            <th>@match.date</th>
-            <th>@match.home_team.name</th>
-            <th>@match.goals_home</th>
-            <th>@match.goals_away</th>
-            <th>@match.away_team.name</th>
-        </tr>
+            <th><strong>Date</strong></th>
+            <th><strong>Home Team</strong></th>
+            <th><strong>Home Score</strong></th>
+            <th><strong>Away Score</strong></th>
+            <th><strong>Away Team</strong></th>
 
-    }
-</table>        
+        </tr>
+        @foreach (var match in Model)
+        {
+            <tr>
+                <th>@match.date</th>
+                <th>@match.home_team.name</th>
+                <th>@match.goals_home</th>
+                <th>@match.goals_away</th>
+                <th>@match.away_team.name</th>
+            </tr>
+
+        }
+    </table>
+</div>
