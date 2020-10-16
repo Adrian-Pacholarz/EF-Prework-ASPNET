@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<TeamGoalsViewModel>
 @{
+    ViewData["Title"] = "Team with goals";
 }
+
+<div class="text-center">
+    <h2 class="display-4">TEAMS</h2>
+    <table>
+        <tr>
+            <th><strong>Name</strong></th>
+            <th><strong>Goals at home</strong></th>
+            <th><strong>Goals away</strong></th>
+            <th><strong>All goals</strong></th>
+        </tr>
+        @foreach (var team in Model)
+        {
+        <tr>
+            <th>@team.name</th>
+            <th>@team.home_goals</th>
+            <th>@team.away_goals</th>
+            <th>@team.all_goals</th>
+        </tr>
+
+        }
+    </table>
+</div>

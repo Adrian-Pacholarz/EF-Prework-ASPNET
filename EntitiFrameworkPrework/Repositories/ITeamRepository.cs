@@ -10,5 +10,6 @@ namespace EntitiFrameworkPrework.Repositories
     {
         IEnumerable<Team> GetTeamsContainingFC();
 
+        IEnumerable<TeamGoalsViewModel> GetTeamsWithGoals();
     }
 }

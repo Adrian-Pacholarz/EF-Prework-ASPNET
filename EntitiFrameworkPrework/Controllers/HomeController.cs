@@ -41,7 +41,8 @@ namespace EntitiFrameworkPrework.Controllers
 
         public IActionResult TeamsGoals()
         {
-            return RedirectToAction("Index");
+            var TeamGoals = _unitOfWork.Teams.GetTeamsWithGoals();
+            return View(TeamGoals);
         }
 
         public IActionResult TeamsMoreThanMatch()

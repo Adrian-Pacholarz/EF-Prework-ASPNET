@@ -68,6 +68,7 @@ namespace EntitiFrameworkPrework.Migrations
             migrationBuilder.Sql("INSERT into Matches VALUES ('20120618 10:34:09 AM', 1, 2, 7, 5)");
             migrationBuilder.Sql("INSERT into Matches VALUES ('20160928 11:47:18 AM', 3, 1, 2, 6)");
             migrationBuilder.Sql("INSERT into Matches VALUES ('20180307 08:10:01 AM', 2, 3, 3, 4)");
+            migrationBuilder.Sql("INSERT into Matches VALUES ('20201015 09:20:59 AM', 1, 3, 2, 1)");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
