@@ -28,5 +28,17 @@ namespace EntitiFrameworkPrework.Repositories
         {
             return Context.Set<TEntity>().ToList();
         }
+
+        public void Add(TEntity toAdd)
+        {
+            Context.Add(toAdd);
+            Context.SaveChanges();
+        }
+
+        public void Remove (TEntity toRemove)
+        {
+            Context.Remove(toRemove);
+            Context.SaveChanges();
+        }
     }
 }
